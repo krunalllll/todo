@@ -1,0 +1,170 @@
+/* ================= FULL TODO APP UI ================= */
+
+/* Background */
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #111827, #0f0c29, #24243e);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Main Card */
+.todo-card {
+  width: 380px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+  border: 1px solid rgba(0, 255, 255, 0.25);
+}
+
+.todo-card h1 {
+  text-align: center;
+  font-size: 28px;
+  color: #00eaff;
+  text-shadow: 0 0 10px cyan;
+  margin-bottom: 20px;
+}
+
+/* ================= GRADIENT CAPSULE FORM ================= */
+
+.gradient-form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+}
+
+/* Input wrapper (capsule) */
+.gf-input-wrap {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 999px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.14s ease;
+}
+
+.gf-input-wrap:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* icon inside pill */
+.gf-icon {
+  margin-right: 8px;
+  font-size: 16px;
+  color: #d7faff;
+}
+
+/* main input */
+.gf-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: #eafaff;
+  font-size: 15px;
+  padding: 6px 4px;
+}
+
+.gf-input::placeholder {
+  color: rgba(234, 245, 255, 0.55);
+}
+
+/* gradient button */
+.gf-button {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+
+  background: linear-gradient(90deg, #7c3aed 0%, #06b6d4 100%);
+  color: white;
+  box-shadow: 0 8px 20px rgba(6, 182, 212, 0.25);
+  transition: 0.2s ease;
+}
+
+.gf-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(6, 182, 212, 0.35);
+}
+
+.gf-button.editing {
+  background: linear-gradient(90deg, #f59e0b, #ef4444);
+}
+
+/* ================= TODO LIST ================= */
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 22px;
+}
+
+/* Each todo item (CARD STYLE restored!) */
+.todo-item {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 12px;
+  border-radius: 12px;
+  border-left: 3px solid #00eaff;
+  margin-bottom: 14px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #dfffff;
+  font-size: 14px;
+
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* ================= EDIT / DELETE Buttons (RESTORED) ================= */
+
+.actions button {
+  border: none;
+  padding: 6px 10px;
+  margin-left: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.actions .edit {
+  background: #facc15;
+  color: #000;
+}
+
+.actions .delete {
+  background: #ef4444;
+  color: white;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 420px) {
+  .gradient-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .gf-button {
+    width: 100%;
+  }
+}
